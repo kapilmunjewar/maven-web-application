@@ -1,5 +1,7 @@
 node {
     try {
+        notifyBuild('STARTED')
+        
         properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
         echo "Build No: ${BUILD_NUMBER}"
