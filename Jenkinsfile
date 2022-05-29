@@ -1,4 +1,4 @@
-node {
+node('slaves') {
     try {
         notifyBuild('STARTED')
         
